@@ -70,3 +70,11 @@ body {
   gap: 10px 10px;
   margin-top: 20px;
 }
+
+#qr-reader__scan_region {
+  min-height: 50px !important;
+}
+
+#qr-reader__dashboard_section {
+  padding: 0px !important;
+}
