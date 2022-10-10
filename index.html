@@ -1,30 +1,66 @@
-<html>
-        <head>
-          <script type="text/javascript">
-         var video = document.createElement('video');
-video.setAttribute('playsinline', '');
-video.setAttribute('autoplay', '');
-video.setAttribute('muted', '');
-video.style.width = '200px';
-video.style.height = '200px';
+<!DOCTYPE html>
+<html lang="en">
 
-/* Setting up the constraint */
-var facingMode = "user"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
-var constraints = {
-  audio: false,
-  video: {
-   facingMode: facingMode
-  }
-};
 
-/* Stream it to video element */
-navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
-  video.srcObject = stream;
-});
-          </script>
-        </head>
-       <body>
-         
-              <h1>TEST</h1>
-        </body>
-        </html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <meta name="msapplication-TileColor" content="#E6E6FA">
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#E6E6FA">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+    <title>TSD</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="inner_container">
+            <header class="header-nav">
+                <div class="network_indicator">состояние сети</div>
+            </header>
+        </div>
+        <main>
+            <div class="inner_container">
+                <div id="qr_field" class="qr_field">
+                    <input type="text" placeholder="QR...">
+                </div>
+                <div id="group_btn" class="group_btn">
+                    <button>SCAN</button>
+                    <button>Test</button>
+                    <button>Settings</button>
+                </div>
+                <div id="qr-reader" style="width: 600px"></div>
+                <script>
+                    function onScanSuccess(decodedText, decodedResult) {
+                        console.log(`Code scanned = ${decodedText}`, decodedResult);
+                    }
+                    var html5QrcodeScanner = new Html5QrcodeScanner(
+                        "qr-reader", { fps: 10, qrbox: 250 });
+                    html5QrcodeScanner.render(onScanSuccess);
+
+                </script>
+            </div>
+        </main>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/script.min.js"></script>
+</body>
+
+</html>
