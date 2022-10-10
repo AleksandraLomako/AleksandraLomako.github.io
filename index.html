@@ -41,15 +41,14 @@
             <div class="inner_container">
                 <div id="qr_field" class="qr_field">
                     <input type="text" placeholder="QR...">
-                    <br>
 
                 </div>
                 <div id="group_btn" class="group_btn">
-                    <button>SCAN</button>
+                    <!-- <button>SCAN</button>
                     <button>Test</button>
-                    <button>Settings</button>
+                    <button>Settings</button> -->
                 </div>
-                <div id="qr-reader" style="width: 600px"></div>
+                <div id="qr-reader"></div>
                 <script>
                     function onScanSuccess(decodedText, decodedResult) {
                         console.log(`Code scanned = ${decodedText}`, decodedResult);
