@@ -33,14 +33,14 @@
     <div class="wrapper">
         <div class="inner_container">
             <header class="header-nav">
-                <div class="network_indicator">состояние сети</div>
+                <div id="network_indicator">состояние сети</div>
             </header>
         </div>
         <main>
             <div class="inner_container"
                 <script>
                     console.log('Initially ' + (window.navigator.onLine ? 'on' : 'off') + 'line');
-                    window.addEventListener('online', () => alert('Became online'));
+                    window.addEventListener('online', () => getElementById('network_indicator').textContext = 'online';
                     window.addEventListener('offline', () => alert('Became offline'));
                 </script>
             </div>
