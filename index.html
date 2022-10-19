@@ -33,15 +33,15 @@
     <div class="wrapper">
         <div class="inner_container">
             <header class="header-nav">
-                <div id="network_indicator">состояние сети</div>
+                <div id="network_indicator">состояние</div>
             </header>
         </div>
         <main>
             <div class="inner_container">
                 <script>
-                    window.addEventListener('offline', (e) => { console.log('offline'); });
+                    window.addEventListener('offline', (e) => { alert('offline'); });
 
-window.addEventListener('online', (e) => { console.log('online'); });
+window.addEventListener('online', (e) => { alert('online'); });
                 </script>
             </div>
         </main>
