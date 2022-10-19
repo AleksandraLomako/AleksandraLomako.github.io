@@ -40,6 +40,7 @@
             <div class="inner_container">
                 <script>
                     console.log('Initially ' + (window.navigator.onLine ? 'on' : 'off') + 'line')
+                    window.addEventListener('online', () => document.getElementById('network_indicator').textContent = 'online');
                     window.addEventListener('offline', () => alert('Became offline'));
                 </script>
             </div>
