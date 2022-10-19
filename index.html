@@ -41,7 +41,7 @@
                 <script>
                    const checkOnlineStatus = async () => {
     try {
-        const online = await fetch("/img/network.svg");
+        const online = await fetch("https://api.publicapis.org/entries");
         return online.status >= 200 && online.status < 300; // either true or false
     } catch (err) {
         return false; // definitely offline
