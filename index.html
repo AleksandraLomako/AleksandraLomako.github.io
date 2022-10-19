@@ -52,12 +52,12 @@
                 <button id="statusCheck">Click to check the <tt>window.navigator.onLine</tt> property</button><br /><br />
 Check the console below for results:
                 <script>
-                    console.log('Initially ' + (window.navigator.onLine ? 'on' : 'off') + 'line');
+                    alert('Initially ' + (window.navigator.onLine ? 'on' : 'off') + 'line');
 
-window.addEventListener('online', () => console.log('Became online'));
-window.addEventListener('offline', () => console.log('Became offline'));
+window.addEventListener('online', () => alert('Became online'));
+window.addEventListener('offline', () => alert('Became offline'));
 
-document.getElementById('statusCheck').addEventListener('click', () => console.log('window.navigator.onLine is ' + window.navigator.onLine));
+document.getElementById('statusCheck').addEventListener('click', () => alert('window.navigator.onLine is ' + window.navigator.onLine));
 
                 </script>
             </div>
