@@ -41,7 +41,8 @@
                 <button id="statusCheck">Click to check the <tt>window.navigator.onLine</tt> property</button><br /><br />
 Check the console below for results:
                 <script>
-                    alert('Initially ' + (window.navigator.onLine ? 'on' : 'off') + 'line');
+                    window.addEventListener('online', () => alert('Became online'));
+                    window.addEventListener('offline', () => alert.log('Became offline'));
                 </script>
             </div>
         </main>
