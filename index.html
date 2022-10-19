@@ -50,13 +50,12 @@
                 </div>
                 <div id="qr-reader"></div>
                 <script>
-                    function onScanSuccess(decodedText, decodedResult) {
-                        console.log(`Code scanned = ${decodedText}`, decodedResult);
-                        document.getElementById('test').textContent = decodedText
-                    }
-                    var html5QrcodeScanner = new Html5QrcodeScanner(
-                        "qr-reader", { fps: 10, qrbox: 250 });
-                    html5QrcodeScanner.render(onScanSuccess);
+                    console.log('Initially ' + (window.navigator.onLine ? 'on' : 'off') + 'line');
+
+window.addEventListener('online', () => console.log('Became online'));
+window.addEventListener('offline', () => console.log('Became offline'));
+
+document.getElementById('statusCheck').addEventListener('click', () => console.log('window.navigator.onLine is ' + window.navigator.onLine));
 
                 </script>
             </div>
