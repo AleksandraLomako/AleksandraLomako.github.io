@@ -33,20 +33,21 @@
     <div class="wrapper">
         <div class="inner_container">
             <header class="header-nav">
-                <div id="network_indicator">состояние</div>
+                <div id="status">состояние</div>
             </header>
         </div>
         <main>
             <div class="inner_container">
                 <script>
-                    if (navigator.onLine) {
-    console.log('online');
-} else {
-    console.log('offline');
-}
-                    window.addEventListener('offline', (e) => { alert('offline'); });
+                   window.addEventListener("offline", (event) => {
+                   const statusDisplay = document.getElementById("status");
+                   statusDisplay.textContent = "OFFline";
+                    });
 
-window.addEventListener('online', (e) => { alert('online'); });
+                   window.addEventListener("online", (event) => {
+                   const statusDisplay = document.getElementById("status");
+                   statusDisplay.textContent = "Online";
+                    });
                 </script>
             </div>
         </main>
