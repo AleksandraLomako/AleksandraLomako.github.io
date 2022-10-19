@@ -39,15 +39,21 @@
         <main>
             <div class="inner_container">
                 <script>
-                   window.addEventListener("offline", (event) => {
-                   const statusDisplay = document.getElementById("status");
-                   statusDisplay.textContent = "OFFline";
-                    });
+                   const checkOnlineStatus = async () => {
+    try {
+        const online = await fetch("/img/network.svg");
+        return online.status >= 200 && online.status < 300; // either true or false
+    } catch (err) {
+        return false; // definitely offline
+    }
+};
 
-                   window.addEventListener("online", (event) => {
-                   const statusDisplay = document.getElementById("status");
-                   statusDisplay.textContent = "Online";
-                    });
+setInterval(async () => {
+    const result = await checkOnlineStatus();
+    const statusDisplay = document.getElementById("status");
+    console.log('testing')
+    statusDisplay.textContent = result ? "Online" : "OFFline";
+}, 5000); // probably too often, try 30000 for every 30 seconds
                 </script>
             </div>
         </main>
