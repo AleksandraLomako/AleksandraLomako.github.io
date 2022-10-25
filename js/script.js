@@ -62,7 +62,7 @@ function checkValue() {
 function logKey(e) {
     if (e.key == 'Enter') {
         var x = document.getElementById("scaner_field").value;
-        console.log(x);
+        alert(x);
     }
 
 }
