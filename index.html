@@ -1,1 +1,120 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width initial-scale=1">    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">    <meta name="msapplication-TileColor" content="#E6E6FA">    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">    <meta name="theme-color" content="#E6E6FA">    <link rel="stylesheet" href="css/style.min.css">    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">    <link rel="manifest" href="manifest.webmanifest">    <script src="js/script.js"></script>    <title>TSD</title></head><body>    <div class="wrapper">        <header>    <div class="inner_container">        <div class="header_wrapper">            <picture><source srcset="img/network.svg" type="image/webp"><img id="header_indicator" src="img/network.svg" alt=""></picture>            <div class="user_icon_name">                <picture><source srcset="img/person.svg" type="image/webp"><img src="img/person.svg" alt=""></picture>                <span id="user_name" class="user_name">Фамилия И.О.</span>            </div>            <picture><source srcset="img/calendar-outline.svg" type="image/webp"><img src="img/calendar-outline.svg" alt=""></picture>            <span id="calendar-date" class="calendar-date">22.10.2022</span>        </div>    </div></header>        <main>            <div class="inner_container">    <div id="login_wrapper" class="login_wrapper">        <div id="network_status" class="network_status">            <picture><source srcset="img/network.svg" type="image/webp"><img id="indicator" src="img/network.svg" alt=""></picture>        </div>        <div class="login_form">            <p>Табельный номер</p>            <input type="text" placeholder="Табельный номер...">            <p>Пароль</p>            <input type="text" placeholder="Пароль...">            <div id="error_login_text" class="error_login_text">                Табельный номер или пароль указан неверно            </div>            <button onclick="Login()">Войти</button>        </div>        <div class="login_footer">            <!-- <p>© 2007 — 2021, Название компании</p> -->        </div>    </div></div>            <div class="inner_container">    <div id="main_menu_wrapper" class="main_menu_wrapper">        <div class="main_menu">            <button class="_btn" onclick="ScanerQR('scaner')">СКАННЕР-ШТРИХ КОДА</button>            <button class="_btn" onclick="ScanerQR('TSD')">ТЕРМИНАЛ СБОРА ДАННЫХ</button>            <button class="_btn" onclick="ScanerQR()">ИНВЕНТАРИЗАЦИЯ</button>            <button class="_btn" onclick="ScanerQR()">ЗАКАЗ</button>            <button class="_btn" onclick="ScanerQR()">ПРИЕМКА</button>            <button class="_btn" onclick="ScanerQR()">ОТГРУЗКА</button>        </div>    </div></div>            <div class="inner_container">    <div id="scaner" class="scaner"></div></div>            <!-- <div class="inner_container">                <div id="qr_field" class="qr_field">                    <input id="qr_text" type="text" placeholder="QR...">                </div>                <div id="group_btn" class="group_btn">                    <button>SCAN</button>                    <button>Test</button>                    <button>Settings</button>                </div>                <div id="qr-reader"></div>                <script>                    function onScanSuccess(decodedText, decodedResult) {                        console.log(`Code scanned = ${decodedText}`, decodedResult);                        document.getElementById('qr_text').value = decodedText                    }                    var html5QrcodeScanner = new Html5QrcodeScanner(                        "qr-reader", { fps: 10, qrbox: 250 });                    html5QrcodeScanner.render(onScanSuccess);                </script>            </div> -->        </main>        <footer>    <div class="inner_container">        <div class="footer_menu">            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/calendar-outline.svg" type="image/webp"><img src="img/calendar-outline.svg" alt=""></picture></button>            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/menu-outline.svg" type="image/webp"><img src="img/menu-outline.svg" alt=""></picture></button>            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/log-in-outline.svg" type="image/webp"><img src="img/log-in-outline.svg" alt=""></picture></button>        </div>    </div></footer>    </div>    <script type="text/javascript" src="app.js"></script>    <script type="text/javascript" src="js/script.min.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <meta name="msapplication-TileColor" content="#E6E6FA">
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#E6E6FA">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="js/script.js"></script>
+    <title>TSD</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <div class="inner_container">
+        <div class="header_wrapper">
+            <picture><source srcset="img/network.svg" type="image/webp"><img id="header_indicator" src="img/network.svg" alt=""></picture>
+            <div class="user_icon_name">
+                <picture><source srcset="img/person.svg" type="image/webp"><img src="img/person.svg" alt=""></picture>
+                <span id="user_name" class="user_name">Фамилия И.О.</span>
+            </div>
+            <picture><source srcset="img/calendar-outline.svg" type="image/webp"><img src="img/calendar-outline.svg" alt=""></picture>
+            <span id="calendar-date" class="calendar-date">22.10.2022</span>
+        </div>
+    </div>
+</header>
+
+        <main>
+            <div class="inner_container">
+    <div id="login_wrapper" class="login_wrapper">
+        <div id="network_status" class="network_status">
+            <picture><source srcset="img/network.svg" type="image/webp"><img id="indicator" src="img/network.svg" alt=""></picture>
+        </div>
+        <div class="login_form">
+            <p>Табельный номер</p>
+            <input type="text" placeholder="Табельный номер...">
+            <p>Пароль</p>
+            <input type="text" placeholder="Пароль...">
+            <div id="error_login_text" class="error_login_text">
+                Табельный номер или пароль указан неверно
+            </div>
+            <button onclick="Login()">Войти</button>
+        </div>
+        <div class="login_footer">
+            <!-- <p>© 2007 — 2021, Название компании</p> -->
+        </div>
+    </div>
+
+</div>
+            <div class="inner_container">
+    <div id="main_menu_wrapper" class="main_menu_wrapper">
+        <div class="main_menu">
+            <button class="_btn" onclick="ScanerQR('scaner')">СКАННЕР-ШТРИХ КОДА</button>
+            <button class="_btn" onclick="ScanerQR('TSD')">ТЕРМИНАЛ СБОРА ДАННЫХ</button>
+            <button class="_btn" onclick="ScanerQR()">ИНВЕНТАРИЗАЦИЯ</button>
+            <button class="_btn" onclick="ScanerQR()">ЗАКАЗ</button>
+            <button class="_btn" onclick="ScanerQR()">ПРИЕМКА</button>
+            <button class="_btn" onclick="ScanerQR()">ОТГРУЗКА</button>
+        </div>
+    </div>
+</div>
+            <div class="inner_container">
+    <div id="scaner" class="scaner"></div>
+</div>
+            <!-- <div class="inner_container">
+                <div id="qr_field" class="qr_field">
+                    <input id="qr_text" type="text" placeholder="QR...">
+
+                </div>
+                <div id="group_btn" class="group_btn">
+                    <button>SCAN</button>
+                    <button>Test</button>
+                    <button>Settings</button>
+                </div>
+                <div id="qr-reader"></div>
+                <script>
+                    function onScanSuccess(decodedText, decodedResult) {
+                        console.log(`Code scanned = ${decodedText}`, decodedResult);
+                        document.getElementById('qr_text').value = decodedText
+                    }
+                    var html5QrcodeScanner = new Html5QrcodeScanner(
+                        "qr-reader", { fps: 10, qrbox: 250 });
+                    html5QrcodeScanner.render(onScanSuccess);
+                </script>
+            </div> -->
+        </main>
+        <footer>
+    <div class="inner_container">
+        <div class="footer_menu">
+            <button class="_btn" onclick="test()"><picture><source srcset="img/calendar-outline.svg" type="image/webp"><img src="img/calendar-outline.svg" alt=""></picture></button>
+            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/menu-outline.svg" type="image/webp"><img src="img/menu-outline.svg" alt=""></picture></button>
+            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/log-in-outline.svg" type="image/webp"><img src="img/log-in-outline.svg" alt=""></picture></button>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/script.min.js"></script>
+</body>
+
+</html>
