@@ -27,14 +27,14 @@ function ScanerQR() {
 
 function checkValue() {
     var doc = document;
-    doc.getElementById('scaner_field').addEventListener("input", function () {
-        var x = doc.getElementById("scaner_field").value;
-        if (x.slice(-1) == " " || x.slice == "Space" || x.slice == 32) {
-            console.log('END');
-            console.log(x);
+    const inputTest = doc.getElementById('scaner_field');
+    inputTest.addEventListener('keydown', logKey)
+}
 
-            alert(x);
-            doc.getElementById('scaner_field').value = ''
-        }
-    });
+function logKey(e) {
+    if (e.key == 'Enter') {
+        var x = document.getElementById("scaner_field").value;
+        console.log(x);
+    }
+
 }
