@@ -53,8 +53,8 @@ body {
 }
 
 .network_status {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin: 0 auto;
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 #indicator {
-  width: 100px;
+  width: 50px;
   -webkit-filter: invert(12%) sepia(7%) saturate(590%) hue-rotate(214deg) brightness(100%) contrast(93%);
           filter: invert(12%) sepia(7%) saturate(590%) hue-rotate(214deg) brightness(100%) contrast(93%);
 }
