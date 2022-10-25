@@ -39,7 +39,6 @@ body {
 }
 
 .login_wrapper {
-  display: none !important;
   top: 0;
   position: absolute;
   z-index: 9999;
