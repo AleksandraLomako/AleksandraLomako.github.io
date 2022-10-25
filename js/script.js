@@ -22,4 +22,19 @@ function ScanerQR() {
     const currentDiv = doc.getElementById("scaner");
     currentDiv.appendChild(newDiv);
     doc.getElementById('scaner_field').focus();
+    checkValue()
+}
+
+function checkValue() {
+    var doc = document;
+    doc.getElementById('scaner_field').addEventListener("input", function () {
+        var x = doc.getElementById("scaner_field").value;
+        if (x.slice(-1) == " " || x.slice == "Space" || x.slice == 32) {
+            console.log('END');
+            console.log(x);
+
+            alert(x);
+            doc.getElementById('scaner_field').value = ''
+        }
+    });
 }
