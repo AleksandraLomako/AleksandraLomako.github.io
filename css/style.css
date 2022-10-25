@@ -191,7 +191,9 @@ header img {
 
 .main_menu {
   width: 95%;
+  height: 360px;
   margin: auto;
+  overflow-y: scroll;
 }
 
 .main_menu button {
