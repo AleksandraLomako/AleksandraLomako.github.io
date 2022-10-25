@@ -1,15 +1,43 @@
-function test() {
-    alert('test')
+//check Online Status/////////////////////////////
+const checkOnlineStatus = async () => {
+    try {
+        const online = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+        return online.status >= 200 && online.status < 300;
+    } catch (err) {
+        return false;
+    }
+};
+
+setInterval(async () => {
+    const result = await checkOnlineStatus();
+    const statusIndicator = document.getElementById('indicator');
+    const statusHeaderIndicator = document.getElementById('header_indicator');
+    statusIndicator.style.filter = result ? "invert(35%) sepia(84%) saturate(4801%) hue-rotate(125deg) brightness(102%) contrast(80%)" : "invert(32%) sepia(80%) saturate(1418%) hue-rotate(335deg) brightness(78%) contrast(92%)";
+    statusHeaderIndicator.style.filter = result ? "invert(35%) sepia(84%) saturate(4801%) hue-rotate(125deg) brightness(102%) contrast(80%)" : "invert(32%) sepia(80%) saturate(1418%) hue-rotate(335deg) brightness(78%) contrast(92%)";
+}, 5000);
+
+
+//Login///////////////////////////////////////////
+function Login() {
+    console.log("Login")
+    var doc = document;
+    // doc.getElementById('error_login_text').style.display = 'block';
+    doc.getElementById('indicator').style.filter = "invert(32%) sepia(80%) saturate(1418%) hue-rotate(335deg) brightness(78%) contrast(92%)";
+    doc.getElementById('login_wrapper').style.display = 'none'
 }
 
+
+// ALERT TEST BUTTON
 function test_btn() {
     var doc = document;
     doc.getElementById('scaner').innerHTML = ""
-    document.getElementById('main_menu_wrapper').style.display = 'block'
+    doc.getElementById('main_menu_wrapper').style.display = 'block'
 }
 
-function ScanerQR() {
-   var doc = document;
+
+function ScanerQR(scaner) {
+    var doc = document;
+    console.log(scaner);
     doc.getElementById('scaner').innerHTML = ""
     const newDiv = doc.createElement('div');
     newDiv.id = 'scanerDiv';
@@ -34,7 +62,11 @@ function checkValue() {
 function logKey(e) {
     if (e.key == 'Enter') {
         var x = document.getElementById("scaner_field").value;
-        alert(x);
+        console.log(x);
     }
 
+}
+
+function test() {
+    alert('test')
 }
