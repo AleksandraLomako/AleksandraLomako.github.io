@@ -63,6 +63,7 @@ function Login() {
 
 // FOOTER MENU FUN BTN
 function changeDate() {
+    doc.getElementById("scaner").innerHTML = "";
     doc.getElementById('main_menu').innerHTML = "";
     const dateWrapper = doc.getElementById("dateWrapper");
     dateWrapper.innerHTML = "";
