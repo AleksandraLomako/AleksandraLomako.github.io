@@ -178,11 +178,29 @@ header img {
 
 .calendar-date {
   color: #27262a;
-  padding: 5px 10px;
+  padding: 5px 0px;
+  width: 40%;
+}
+
+#dateWrapper {
+  display: grid;
+  grid-template-rows: auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#dateWrapper input {
+  width: 300px;
+  font-size: 24px;
+  padding: 10px;
+  margin: 30px auto;
+  border: 1px solid #eaeaea;
+  color: #27262a;
+  border-radius: 5px;
 }
 
 .main_menu_wrapper {
-  display: none;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -191,9 +209,10 @@ header img {
 
 .main_menu {
   width: 95%;
-  height: 300px;
+  height: 360px;
   margin: auto;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .main_menu button {
@@ -224,6 +243,16 @@ header img {
   color: #27262a;
   margin: 10px;
   width: 100%;
+}
+
+.codes {
+  position: absolute;
+  z-index: 11111111;
+  top: 100px;
+  left: 15px;
+  height: 300px;
+  width: 300px;
+  margin: auto;
 }
 
 footer img {
