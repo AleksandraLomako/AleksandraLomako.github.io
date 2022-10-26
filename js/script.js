@@ -35,9 +35,8 @@ function test_btn() {
 }
 
 
-function ScanerQR(scaner) {
+function ScanerQR() {
     var doc = document;
-    console.log(scaner);
     doc.getElementById('scaner').innerHTML = ""
     const newDiv = doc.createElement('div');
     newDiv.id = 'scanerDiv';
@@ -53,6 +52,8 @@ function ScanerQR(scaner) {
     checkValue()
 }
 
+
+
 function checkValue() {
     var doc = document;
     const inputTest = doc.getElementById('scaner_field');
@@ -62,7 +63,13 @@ function checkValue() {
 function logKey(e) {
     if (e.key == 'Enter') {
         var x = document.getElementById("scaner_field").value;
-        alert(x);
+
+
+        var doc = document;
+        doc.getElementById("scaner_field").value = "";
+        const ptest = doc.createElement('p')
+        ptest.innerText = x;
+        document.getElementById('codes').appendChild(ptest)
     }
 
 }
@@ -70,3 +77,27 @@ function logKey(e) {
 function test() {
     alert('test')
 }
+
+
+
+const acceptsInput = (elem) => {
+    if (!elem) { return false }
+
+    let tag = elem.tagName
+    return tag == 'INPUT' || tag == 'SELECT' || tag == 'TEXTAREA' || elem.isContentEditable || elem.tabIndex >= 0
+}
+
+document.addEventListener('touchend', (e) => {
+    let target = e.target
+    let dontDiscardKeyboard = target.classList.contains('do-not-hide-keyboard')
+
+    // On iOS tapping anywhere doesn’t
+    // automatically discard keyboard
+    if (dontDiscardKeyboard) {
+        e.preventDefault()
+        // DO ACTION HERE
+    } else if (!acceptsInput(target)) {
+        document.activeElement.blur()
+    }
+})
+
