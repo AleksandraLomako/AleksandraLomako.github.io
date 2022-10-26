@@ -126,7 +126,7 @@ function scanLine() {
     const currentDiv = doc.getElementById("scaner");
     currentDiv.appendChild(newScanLine)
     doc.getElementById('scaner_field').focus();
-    checkValue()
+//     checkValue()
 }
 
 
