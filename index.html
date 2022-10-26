@@ -9,7 +9,7 @@
     <meta name="msapplication-TileColor" content="#E6E6FA">
     <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#E6E6FA">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
@@ -52,34 +52,31 @@
         </div>
         <div class="login_form">
             <p>Табельный номер</p>
-            <input type="text" placeholder="Табельный номер...">
+            <input id="tab_num" type="number" inputmode="none" placeholder="Табельный номер...">
             <p>Пароль</p>
-            <input type="text" placeholder="Пароль...">
+            <input id="password" type="number" inputmode="none" placeholder="Пароль...">
             <div id="error_login_text" class="error_login_text">
                 Табельный номер или пароль указан неверно
             </div>
             <button onclick="Login()">Войти</button>
         </div>
-        <div class="login_footer">
-            <!-- <p>© 2007 — 2021, Название компании</p> -->
-        </div>
     </div>
 
 </div>
             <div class="inner_container">
+    <div id="bar_info"></div>
+    <div id="dateWrapper"></div>
     <div id="main_menu_wrapper" class="main_menu_wrapper">
-        <div class="main_menu">
-            <button class="_btn" onclick="ScanerQR('scaner')">СКАННЕР-ШТРИХ КОДА</button>
-            <button class="_btn" onclick="ScanerQR('TSD')">ТЕРМИНАЛ СБОРА ДАННЫХ</button>
-            <button class="_btn" onclick="ScanerQR()">ИНВЕНТАРИЗАЦИЯ</button>
-            <button class="_btn" onclick="ScanerQR()">ЗАКАЗ</button>
-            <button class="_btn" onclick="ScanerQR()">ПРИЕМКА</button>
-            <button class="_btn" onclick="ScanerQR()">ОТГРУЗКА</button>
+        <div id="main_menu" class="main_menu">
         </div>
     </div>
 </div>
             <div class="inner_container">
-    <div id="scaner" class="scaner"></div>
+    <div id="scaner" class="scaner">
+        <!-- <div id="codes" class="codes"></div> -->
+    </div>
+    <!-- <div id="codes" class="codes"></div> -->
+
 </div>
             <!-- <div class="inner_container">
                 <div id="qr_field" class="qr_field">
@@ -106,14 +103,15 @@
         <footer>
     <div class="inner_container">
         <div class="footer_menu">
-            <button class="_btn" onclick="test()"><picture><source srcset="img/calendar-outline.svg" type="image/webp"><img src="img/calendar-outline.svg" alt=""></picture></button>
-            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/menu-outline.svg" type="image/webp"><img src="img/menu-outline.svg" alt=""></picture></button>
-            <button class="_btn" onclick="test_btn()"><picture><source srcset="img/log-in-outline.svg" type="image/webp"><img src="img/log-in-outline.svg" alt=""></picture></button>
+            <button class="_btn" onclick="changeDate()"><picture><source srcset="img/calendar-outline.svg" type="image/webp"><img src="img/calendar-outline.svg" alt=""></picture></button>
+            <button class="_btn" onclick="menu()"><picture><source srcset="img/menu-outline.svg" type="image/webp"><img src="img/menu-outline.svg" alt=""></picture></button>
+            <button class="_btn" onclick="LogOut()"><picture><source srcset="img/log-in-outline.svg" type="image/webp"><img src="img/log-in-outline.svg" alt=""></picture></button>
         </div>
     </div>
 </footer>
     </div>
     <script type="text/javascript" src="app.js"></script>
+    <!-- <script type="text/javascript" src="js/script.min.js"></script> -->
 </body>
 
 </html>
