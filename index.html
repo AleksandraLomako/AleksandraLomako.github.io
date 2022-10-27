@@ -9,7 +9,7 @@
     <meta name="msapplication-TileColor" content="#E6E6FA">
     <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#E6E6FA">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
@@ -64,7 +64,12 @@
 
 </div>
             <div class="inner_container">
-    <div id="bar_info"></div>
+    <div id="bar_info" class="bar_info">
+        <p>Отдел: <span id="department">Лаборатория</span></p>
+        <p>Тип операции: <span id="operation_type">-</span></p>
+        <p>№ линии: <span id="num_line">-</span></p>
+        <p>Штрих-код: <span id="cod">-</span></p>
+    </div>
     <div id="dateWrapper"></div>
     <div id="main_menu_wrapper" class="main_menu_wrapper">
         <div id="main_menu" class="main_menu">
