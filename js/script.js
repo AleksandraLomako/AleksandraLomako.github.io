@@ -19,7 +19,7 @@ setInterval(async () => {
     const statusHeaderIndicator = doc.getElementById('header_indicator');
     statusIndicator.style.filter = result ? "invert(35%) sepia(84%) saturate(4801%) hue-rotate(125deg) brightness(102%) contrast(80%)" : "invert(32%) sepia(80%) saturate(1418%) hue-rotate(335deg) brightness(78%) contrast(92%)";
     statusHeaderIndicator.style.filter = result ? "invert(35%) sepia(84%) saturate(4801%) hue-rotate(125deg) brightness(102%) contrast(80%)" : "invert(32%) sepia(80%) saturate(1418%) hue-rotate(335deg) brightness(78%) contrast(92%)";
-}, 3000);
+}, 5000);
 
 
 // FORMAT DATE
@@ -119,6 +119,7 @@ function LogOut() {
 
 // SCANER LINE
 function scanLine() {
+    doc.getElementById("main_menu").innerHTML = "";
     doc.getElementById("scaner").innerHTML = "";
     const newScanLine = doc.createElement('div');
     newScanLine.id = "scanerDiv";
@@ -155,6 +156,7 @@ function logKey(e) {
 
 // SCANER COD
 function scanerCod() {
+    doc.getElementById("main_menu").innerHTML = "";
     doc.getElementById('scaner').innerHTML = ""
     const newScanCod = doc.createElement('div');
     newScanCod.id = "scanerDiv";
