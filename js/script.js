@@ -192,5 +192,14 @@ function logKeyCode(e) {
 
 function showInfoCod(cod) {
     console.log(cod);
+    var codDivInfo = doc.createElement("div");
+    codDivInfo.className = "cod_div_info";
+    var codInfoText = doc.createElement("span");
+    codInfoText.textContent = "Штрих-код: " + cod;
+    codDivInfo.appendChild(codInfoText);
+    const currentDiv = doc.getElementById("scanerDiv");
+    currentDiv.appendChild(codDivInfo)
+
+
 
 }
