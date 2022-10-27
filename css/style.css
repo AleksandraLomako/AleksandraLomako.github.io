@@ -40,7 +40,7 @@ body {
 
 .login_wrapper {
   top: 0;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   width: 100%;
   height: 100%;
@@ -54,7 +54,6 @@ body {
 
 .network_status {
   padding-top: 20px;
-  padding-bottom: 20px;
   margin: 0 auto;
 }
 
@@ -81,8 +80,7 @@ body {
 }
 
 .login_form p {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 0px;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
@@ -93,7 +91,8 @@ body {
 }
 
 .login_form input {
-  height: 60px;
+  height: 40px;
+  margin: 10px 0px 10px 0px;
   border: 1px solid #eaeaea;
   border-radius: 5px;
   padding-left: 20px;
@@ -116,7 +115,7 @@ body {
 }
 
 .login_form button {
-  margin-top: 50px;
+  margin-top: 40px;
   height: 60px;
   background: #fbfbfb;
   border-radius: 5px;
@@ -182,6 +181,30 @@ header img {
   width: 40%;
 }
 
+.bar_info {
+  width: 100%;
+  height: auto;
+  color: #27262a;
+  font-size: 16px;
+  background-color: #fbfbfb;
+  border: 1px solid #eaeaea;
+  -webkit-box-shadow: 0px 1px #003b87;
+          box-shadow: 0px 1px #003b87;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.bar_info p {
+  padding: 0px 3px;
+  margin: 0px;
+}
+
+.bar_info span {
+  font-weight: 900;
+}
+
 #dateWrapper {
   display: grid;
   grid-template-rows: auto auto;
@@ -209,7 +232,7 @@ header img {
 
 .main_menu {
   width: 95%;
-  height: 360px;
+  height: 300px;
   margin: auto;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -217,15 +240,20 @@ header img {
 
 .main_menu button {
   margin-top: 10px;
+  text-transform: uppercase;
 }
 
 .scanerDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   z-index: 88888;
   position: fixed;
-  top: 40px;
+  top: 140px;
   bottom: 65px;
   width: 100%;
   background-color: #F2F2F2;
@@ -242,7 +270,12 @@ header img {
   line-height: 37px;
   color: #27262a;
   margin: 10px;
-  width: 100%;
+}
+
+.scanerDiv span {
+  margin: 0 auto;
+  color: #0363c3;
+  font-weight: 600;
 }
 
 .codes {
