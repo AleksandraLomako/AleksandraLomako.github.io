@@ -95,6 +95,12 @@ let serials = {
 ;
 
 
+setTimeout(() => {
+    document.getElementById("splash_screen").style.display = "none";
+    document.body.style.backgroundColor = "#22272e";
+    document.getElementById("header").style.display = "block";
+}, 5000)
+
 
 document.addEventListener('keyup', (e) => {
     if (e.code === "Enter") {
