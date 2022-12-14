@@ -6,7 +6,7 @@
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#E6E6FA",
-  "background_color": "#E6E6FA",
+  "background_color": "#000000",
   "icons": [
     {
       "src": "img/wcls-logo-512.png",
