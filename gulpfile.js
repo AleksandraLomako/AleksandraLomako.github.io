@@ -15,7 +15,6 @@ let path = {
         css: "css/",
         js: "js/",
         img: "img/",
-
     },
     src: {
         pwa: [source_folder + "/*"],
