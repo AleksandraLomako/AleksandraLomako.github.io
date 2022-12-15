@@ -1,30 +1,6 @@
 let project_folder = "dist";
 let source_folder = "#src";
 
-// let path = {
-//     build: {
-//         html: project_folder + "/",
-//         css: project_folder + "/css/",
-//         js: project_folder + "/js/",
-//         img: project_folder + "/img/",
-//         fonts: project_folder + "/fonts/",
-//     },
-//     src: {
-//         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html",],
-//         css: source_folder + "/scss/style.scss",
-//         // css: source_folder + "/scss/*.scss",
-//         js: source_folder + "/js/script.js",
-//         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-//         fonts: source_folder + "/fonts/*.ttf",
-//     },
-//     watch: {
-//         html: source_folder + "/**/*.html",
-//         css: source_folder + "/scss/**/*.scss",
-//         js: source_folder + "/js/**/*.js",
-//         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-//     },
-//     clean: "./" + project_folder + "/"
-// }
 
 let path = {
     build: {
@@ -34,6 +10,11 @@ let path = {
         js: project_folder + "/js/",
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
+        // github
+        css: "css/",
+        js: "js/",
+        img: "img/",
+
     },
     src: {
         pwa: [source_folder + "/*"],
@@ -50,7 +31,8 @@ let path = {
         js: source_folder + "/js/**/*.js",
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     },
-    clean: "./" + project_folder + "/"
+    clean: "./" + project_folder + "/",
+    clean: "./css"
 }
 
 let { src, dest } = require('gulp'),
