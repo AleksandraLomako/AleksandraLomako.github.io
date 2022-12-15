@@ -11,6 +11,7 @@ let path = {
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
         // github
+        html: "./",
         css: "css/",
         js: "js/",
         img: "img/",
@@ -32,7 +33,10 @@ let path = {
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     },
     clean: "./" + project_folder + "/",
-    clean: "./css"
+    clean: "img/",
+    clean: "css/",
+    clean: "js/",
+    clean: "*.html",
 }
 
 let { src, dest } = require('gulp'),

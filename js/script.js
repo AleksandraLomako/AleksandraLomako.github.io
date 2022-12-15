@@ -1,5 +1,7 @@
 let mult = {
     "serials": [
+        { "id": "958607", "name": "Леди Баг и Супер-кот", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/1e6d0bf0-fe6e-488c-b12e-d18cd9c4826a/1920x" },
+        { "id": "1115176", "name": "Кощей. Похититель невест", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9ab093e2-01cd-47be-896f-e7e5c378693b/1920x" },
         { "id": "959274", "name": "Олаф и холодное приключение", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/3cab2b21-0419-4088-9080-d08b3651986e/1920x" },
         { "id": "493208", "name": "Холодное сердце", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/efa923ca-2007-4a79-b759-377fc1a5664f/300x450" },
         { "id": "903831", "name": "Холодное сердце 2", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/0c2824a3-910f-476b-a657-06f6e2da13b1/300x450" },
@@ -10,7 +12,6 @@ let mult = {
         { "id": "89514", "name": "Рататуй", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/60faa2b2-83b1-49cc-aa4d-164202a40142/1920x" },
         { "id": "478491", "name": "Маша и Медведь", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/55630d77-54d7-4571-858e-40710a7f5820/1920x" },
         { "id": "458", "name": "Корпорация монстров", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/cf8c083b-3fdb-44a2-b6ca-2203ec07fc54/1920x" },
-        { "id": "84049", "name": "Рапунцель: Запутанная история", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/fdc6ac65-b118-47fe-9982-9d1888f1a855/1920x" },
         { "id": "707", "name": "Ледниковый период", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/ade68e1d-f425-4fab-a28c-b513f3d559eb/1920x" },
         { "id": "325381", "name": "Вверх", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/6aec57ca-9258-4903-89b8-dfcc44070c0f/1920x" },
         { "id": "6006", "name": "Мадагаскар", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/79a82b26-3744-4451-bbe8-b6ce0e332495/1920x" },
@@ -66,12 +67,23 @@ let films = {
         { "id": "102124", "name": "Пираты Карибского моря: На краю света", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/cb1f749e-958e-4504-ae51-ddb3d98b9a9f/1920x" },
         { "id": "427076", "name": "Пираты Карибского моря: На странных берегах", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/dc871087-116c-4724-b68b-e623b88a458b/1920x" },
         { "id": "575180", "name": "Пираты Карибского моря: Мертвецы не рассказывают сказки", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/23845707-0864-424a-854b-6cbe834b5458/1920x" },
+        { "id": "1045585", "name": "Сердце пармы", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/f2d7ecc1-635c-48a2-86db-180982fd9923/1920x" },
         { "id": "328", "name": "Властелин колец: Братство Кольца", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/5ad3a7d5-0f8f-4f3b-aca2-59bf1cdbe82c/1920x" },
         { "id": "312", "name": "Властелин колец: Две крепости", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/5f05fb11-3a26-4ccc-bc6e-8f3707fc72d8/1920x" },
         { "id": "3498", "name": "Властелин колец: Возвращение короля", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/91ca162a-7b3d-44f9-8224-794b80019e3b/1920x" },
+        { "id": "689", "name": "Гарри Поттер и философский камень", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/c208c056-54ba-4190-9f0a-0838d8bebad8/1920x" },
+        { "id": "688", "name": "Гарри Поттер и Тайная комната", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/edb607ae-7023-4282-be9e-7b623f021fc6/1920x" },
+        { "id": "322", "name": "Гарри Поттер и узник Азкабана", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/3956a637-2f3e-456f-8d3e-d11e6f7ad515/1920x" },
+        { "id": "8408", "name": "Гарри Поттер и Кубок огня", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/30a613f4-4b4b-4024-91ad-7a458006a882/1920x" },
+        { "id": "48356", "name": "Гарри Поттер и Орден Феникса", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/5bf1c1fb-b5b8-4701-b4e2-27ff0f85e536/1920x" },
+        { "id": "89515", "name": "Гарри Поттер и Принц-полукровка", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/2e0379b0-fd2b-4964-8fdd-bf6c118aaa6e/1920x" },
+        { "id": "276762", "name": "Гарри Поттер и Дары Смерти: Часть I", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/6b2f8d78-d441-43fe-8d2b-aad77e1ca4b9/1920x" },
+        { "id": "407636", "name": "Гарри Поттер и Дары Смерти: Часть II", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/cf1353fa-f085-4730-9a8a-0936525c7d5e/300x" },
         { "id": "251733", "name": "Аватар (2009)", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/92291b67-0ed8-4b0a-b241-c6b8b442cbca/1920x" },
         { "id": "505898", "name": "Аватар: Путь воды (2022)", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/1414e0ba-2018-4173-9a41-8e202e09f4fb/1920x" },
         { "id": "4542208", "name": "Вышка (2022)", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/19b383f0-400b-4314-8c93-a08f85f696cf/1920x" },
+        { "id": "1228069", "name": "Темные воды", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/671c38ee-5e9c-475a-b797-8bfb29381bc1/1920x" },
+        { "id": "976636", "name": "Большая игра", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/00e2e084-093b-446a-a5f7-b0ab926d9612/1920x" },
     ]
 }
 
@@ -92,6 +104,20 @@ let serials = {
 
     ]
 }
+
+let tok_show = {
+    "serials": [
+        { "id": "893915", "name": "В дикой природе с Беаром Гриллсом", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/4c0ef028-35cf-4866-becd-a7d788906753/1920x" },
+        { "id": "982730", "name": "Гранд тур", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/8da60170-e947-4970-b1e3-94bdb017d9f0/1920x" },
+        { "id": "1007472", "name": "Планета Земля 2", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/450b4a3b-b0cb-44c1-a588-f3cd987e7a3f/1920x" },
+        { "id": "1204221", "name": "Хранители Алтая", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/f9526663-43fb-4d66-b5d2-aa657abf8571/1920x" },
+        { "id": "1183563", "name": "Студия 54", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/c8cb9b46-e689-4be2-9df7-a5baba101ad0/1920x" },
+        { "id": "573738", "name": "BBC: Чудеса Солнечной системы", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/a154689a-cb38-4358-9de1-01527e8bea6f/1920x" },
+        { "id": "485260", "name": "Боб Марли", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/2e75666c-224e-4bef-8408-6133b656a1a3/1920x" },
+
+
+    ]
+}
 ;
 
 
@@ -99,7 +125,7 @@ setTimeout(() => {
     document.getElementById("splash_screen").style.display = "none";
     document.body.style.backgroundColor = "#22272e";
     document.getElementById("header").style.display = "block";
-}, 5000)
+}, 3000)
 
 
 document.addEventListener('keyup', (e) => {
@@ -112,6 +138,7 @@ document.addEventListener('keyup', (e) => {
 function searchFilm() {
     let doc = document;
     let id = doc.getElementById("id_film").value;
+    doc.getElementById("name_film").textContent = "";
     try {
         doc.getElementById("yohoho").remove();
         playVideo(id, doc)
@@ -133,20 +160,36 @@ function playVideo(id, doc) {
 }
 
 function getFilms() {
-    document.getElementById("poster_list").innerHTML = "";
+    let doc = document;
+    doc.getElementById("content").innerHTML = "";
+    doc.getElementById("name_film").textContent = "";
+    doc.getElementById("poster_list").innerHTML = "";
     updateContent(films)
 }
 
 function getSerials() {
+    let doc = document;
+    doc.getElementById("content").innerHTML = "";
+    doc.getElementById("name_film").textContent = "";
     document.getElementById("poster_list").innerHTML = "";
     updateContent(serials)
 }
 
 function getMult() {
+    let doc = document;
+    doc.getElementById("content").innerHTML = "";
+    doc.getElementById("name_film").textContent = "";
     document.getElementById("poster_list").innerHTML = "";
     updateContent(mult)
 }
 
+function getTok_show() {
+    let doc = document;
+    doc.getElementById("content").innerHTML = "";
+    doc.getElementById("name_film").textContent = "";
+    document.getElementById("poster_list").innerHTML = "";
+    updateContent(tok_show)
+}
 
 function updateContent(content) {
     console.log(content)
@@ -167,28 +210,18 @@ function updateContent(content) {
         doc.getElementById("poster_list").appendChild(container_film);
         doc.getElementById(i).appendChild(poster)
         doc.getElementById(i).appendChild(name_film);
-
-
         poster.onclick = function () {
             try {
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 doc.getElementById("yohoho").remove();
 
                 playVideo(poster.id, doc);
-
-
             }
             catch {
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 playVideo(poster.id, doc);
-
-
             }
-
         }
         i++;
     }
-
 }
-
-
