@@ -214,12 +214,13 @@ function updateContent(content) {
             try {
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 doc.getElementById("yohoho").remove();
-
                 playVideo(poster.id, doc);
+                doc.getElementById("poster_list").innerHTML = "";
             }
             catch {
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 playVideo(poster.id, doc);
+                doc.getElementById("poster_list").innerHTML = "";
             }
         }
         i++;
