@@ -89,7 +89,7 @@ let films = {
 
 let serials = {
     "serials": [
-        { "id": "4703386", "name": "Билли Кид", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9df58265-6b36-440c-9759-b8509bf9ed27/1920x" },
+        { "id": "4703386", "name": "Билли Кид", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/4939065f-efa2-4192-a3c2-cec534e79e01/300x450" },
         { "id": "1316601", "name": "Дом Дракона", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/4939065f-efa2-4192-a3c2-cec534e79e01/300x450" },
         { "id": "464963", "name": "Игра престолов", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/0fd61bf2-49b1-4715-b884-a7eaa39a569d/1920x" },
         { "id": "306084", "name": "Теория большого взрыва", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/5067dbe3-760d-45b6-826d-f22a283d408b/1920x" },
