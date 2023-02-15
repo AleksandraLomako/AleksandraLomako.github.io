@@ -90,6 +90,7 @@ let films = {
 
 let serials = {
     "serials": [
+        { "id": "232247", "name": "Два с половиной человека", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/4163db4a-8c89-4c35-b30b-7f7db7167c2b/1920x" },
         { "id": "1120247", "name": "Наследие", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/5c4264d2-4f24-4e20-b7bd-9136fb027934/1920x" },
         { "id": "195523", "name": "Мир Дикого Запада", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/0f04f3c8-616f-4d10-b385-6a734abc062f/1920x" },
         { "id": "4703386", "name": "Билли Кид", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9df58265-6b36-440c-9759-b8509bf9ed27/1920x" },
