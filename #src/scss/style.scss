@@ -26,143 +26,121 @@
 
 body {
     margin: 0px;
-    background-color: #000000 !important;
     font-family: "Roboto", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background: #1c202c;
 }
 
-.logo {
-    font-size: 100px;
-}
-
-.wrapper {
-    width: 100%;
-    margin: 0px;
-    height: auto;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-color: #000000;
-    -webkit-animation: fade-in 1s linear;
-    animation: fade-in 1s linear;
-
-    height: 100%;
-}
-
-.splash_screen {
-    position: fixed;
-    width: 100%;
+.page {
     height: 100vh;
-    z-index: 100;
-    text-align: center;
-    background-color: #000000;
-
-}
-
-.splash_screen {
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000;
-    text-align: center;
-    align-items: center;
-    display: grid;
-    color: #d11818;
-}
-
-.splash_screen p {
-    color: #d11818;
+    display: flex;
+    flex-direction: column;
 }
 
 .inner_container {
-    width: 1700px;
-    margin: auto;
+    max-width: 1600px;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 header {
+    width: calc(100% - 20px);
     position: fixed;
-    width: 100%;
-    height: 100px;
-    background-color: #000000;
     z-index: 10;
+    background: #1c202c;
     -webkit-animation: fade-in 0.5s linear;
     animation: fade-in 0.5s linear;
-    margin: auto;
 }
 
 menu {
-    width: 100%;
+    max-width: 1600px;
+    min-width: 320px;
     display: flex;
-    margin: 20px auto 0px auto;
+    margin: 10px auto;
     padding: 0px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.logo_header {
-    font-size: 66px;
-    margin: 0px;
+.logo {
     color: #e50914;
+    font-weight: 500;
+    font-size: 24px;
+    background: none;
+    padding: 0px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 12.5px 2.7px;
 }
 
-menu a {
+.header-menu-item {
+    display: flex;
+    gap: 30px;
+}
+
+.menu_item {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 28px;
     font-weight: 500;
-    // letter-spacing: 2.02px;
-    margin-left: 5%;
+    background: #282b34;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-a:hover {
+.menu_item:hover {
     color: #e50914;
 }
 
+.search {
+    display: flex;
+}
 
 .num_input {
-    width: 100px;
-    margin-left: 5%;
+    width: 120px;
+    height: 48px;
     font-family: "Roboto", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 500;
     border: 3px solid #e50914;
     padding: 0px 0px 0px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .num_input:focus {
-    border: 3px solid #e50914;
     outline: none;
 }
 
 .search_btn {
     width: 50px;
-    margin-right: 5%;
     font-family: "Roboto", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 500;
-    background-color: #000000;
+    background: #282b34;
     color: #FFFFFF;
     outline: none;
     border-top: 3px solid #e50914;
     border-bottom: 3px solid #e50914;
     border-right: 3px solid #e50914;
     border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 0px;
     cursor: pointer;
 }
 
 .search_btn:hover {
     color: #e50914;
-    background-color: #fff;
 }
 
 .main_wrapper {
     display: grid;
     grid-template-rows: auto auto;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 #name_film {
@@ -176,12 +154,12 @@ a:hover {
 }
 
 .poster_list {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 10px;
     gap: 30px 30px;
 }
 
@@ -190,9 +168,9 @@ a:hover {
     object-fit: cover;
     width: 200px;
     height: 300px;
-    border-radius: 0.5rem;
-    -webkit-animation: fade-in 3s linear;
-    animation: fade-in 3s linear;
+    border-radius: 5px;
+    -webkit-animation: fade-in 1s linear;
+    animation: fade-in 1s linear;
 }
 
 .posterImg:hover {
@@ -211,103 +189,10 @@ p {
     width: 200px;
 }
 
-// // MEDIA
-@media all and (min-width: 1400px) and (max-width: 1700px) {
-    .inner_container {
-        width: 1400px;
-    }
-
-    menu a {
-        font-size: 28px;
-    }
-
-    .poster_list {
-        grid-template-columns: auto auto auto auto auto auto;
-        gap: 10px 18px;
-    }
-
-    #content {
-        width: 854px;
-        margin: auto;
-    }
-}
-
-@media all and (min-width: 1024px) and (max-width: 1399px) {
-    .inner_container {
-        width: 1000px;
-    }
-
-    menu a {
-        font-size: 20px;
-    }
-
-    .poster_list {
-        grid-template-columns: auto auto auto auto;
-        gap: 12px 30px;
-    }
-
-    #content {
-        width: 980px;
-    }
-}
-
-@media all and (min-width: 768px) and (max-width: 1023px) {
-    .inner_container {
-        width: 768px;
-    }
-
-    menu a {
-        font-size: 14px;
-    }
-
-    .poster_list {
-        grid-template-columns: auto auto auto;
-        gap: 10px 18px;
-    }
-
-    #content {
-        width: 704px;
-    }
-}
-
-@media all and (min-width: 360px) and (max-width: 480px) {
-    .inner_container {
-        width: 360px;
-    }
-
-    .logo_header {
-        font-size: 32px;
-    }
-
-    menu {
-        display: grid;
-        grid-template-columns: 75px 117px 75px 72px;
-        gap: 10px 0px;
-    }
-
-    menu a {
-        font-size: 16px;
-        margin: 0px;
-    }
-
-    .poster_list {
-        grid-template-columns: auto auto;
-        gap: 10px 10px;
-        margin: auto;
-        padding: 0px;
-
-    }
-
-    .posterImg {
-        width: 170px;
-        height: 250px;
-    }
-
-    p {
-        width: 170px;
-    }
-
-    #content {
-        width: 360px;
-    }
-}
+// MEDIA
+// @media all and (min-width: 1280px) and (max-width: 1700px) {
+//     #content {
+//         width: 1260px;
+//         // height: 710px;
+//     }
+// }

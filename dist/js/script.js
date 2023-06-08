@@ -89,6 +89,7 @@ let films = {
 
 let serials = {
     "serials": [
+        { "id": "4703386", "name": "Билли Кид", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9df58265-6b36-440c-9759-b8509bf9ed27/1920x" },
         { "id": "1316601", "name": "Дом Дракона", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/4939065f-efa2-4192-a3c2-cec534e79e01/300x450" },
         { "id": "464963", "name": "Игра престолов", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/0fd61bf2-49b1-4715-b884-a7eaa39a569d/1920x" },
         { "id": "306084", "name": "Теория большого взрыва", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/5067dbe3-760d-45b6-826d-f22a283d408b/1920x" },
@@ -121,22 +122,23 @@ let tok_show = {
 ;
 
 
-setTimeout(() => {
-    document.getElementById("splash_screen").style.display = "none";
-    document.body.style.backgroundColor = "#22272e";
-    document.getElementById("header").style.display = "block";
-}, 3000)
-
-
 document.addEventListener('keyup', (e) => {
-    if (e.code === "Enter") {
-        searchFilm()
+    let id_film = document.getElementById("id_film")
+    if (e.code === "Numpad1" || e.code === "Digit1") {
+
+        id_film.focus()
+        id_film.addEventListener('keyup', (e) => {
+            if (e.code === "Enter") {
+                searchFilm()
+            }
+        })
     }
     else { }
 })
 
 function searchFilm() {
     let doc = document;
+    document.getElementById("poster_list").innerHTML = "";
     let id = doc.getElementById("id_film").value;
     doc.getElementById("name_film").textContent = "";
     try {
@@ -149,6 +151,20 @@ function searchFilm() {
 }
 
 function playVideo(id, doc) {
+    let w_window = window.innerWidth;
+    if (w_window >= 1600) {
+        doc.getElementById("content").style.width = `1280px`;
+        doc.getElementById("content").style.height = `720px`;
+    }
+    else {
+        if (w_window <= 1300) {
+            doc.getElementById("content").style.width = `980px`;
+            doc.getElementById("content").style.height = `560px`;
+        }
+    }
+
+
+
     let filmDiv = doc.createElement("div");
     filmDiv.id = "yohoho";
     filmDiv.setAttribute("data-kinopoisk", id);
@@ -161,6 +177,8 @@ function playVideo(id, doc) {
 
 function getFilms() {
     let doc = document;
+    doc.getElementById("content").style.width = `0`;
+    doc.getElementById("content").style.height = `0`;
     doc.getElementById("content").innerHTML = "";
     doc.getElementById("name_film").textContent = "";
     doc.getElementById("poster_list").innerHTML = "";
@@ -169,6 +187,8 @@ function getFilms() {
 
 function getSerials() {
     let doc = document;
+    doc.getElementById("content").style.width = `0`;
+    doc.getElementById("content").style.height = `0`;
     doc.getElementById("content").innerHTML = "";
     doc.getElementById("name_film").textContent = "";
     document.getElementById("poster_list").innerHTML = "";
@@ -177,6 +197,8 @@ function getSerials() {
 
 function getMult() {
     let doc = document;
+    doc.getElementById("content").style.width = `0`;
+    doc.getElementById("content").style.height = `0`;
     doc.getElementById("content").innerHTML = "";
     doc.getElementById("name_film").textContent = "";
     document.getElementById("poster_list").innerHTML = "";
@@ -214,12 +236,13 @@ function updateContent(content) {
             try {
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 doc.getElementById("yohoho").remove();
-
                 playVideo(poster.id, doc);
+                doc.getElementById("poster_list").innerHTML = "";
             }
             catch {
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 playVideo(poster.id, doc);
+                doc.getElementById("poster_list").innerHTML = "";
             }
         }
         i++;

@@ -84,15 +84,11 @@ let films = {
         { "id": "4542208", "name": "Вышка (2022)", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/19b383f0-400b-4314-8c93-a08f85f696cf/1920x" },
         { "id": "1228069", "name": "Темные воды", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/671c38ee-5e9c-475a-b797-8bfb29381bc1/1920x" },
         { "id": "976636", "name": "Большая игра", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/00e2e084-093b-446a-a5f7-b0ab926d9612/1920x" },
-        { "id": "837552", "name": "Сделано в Америке", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/0c8fd9b1-ed18-4554-92e9-a85cd447864b/1920x" },
     ]
 }
 
 let serials = {
     "serials": [
-        { "id": "232247", "name": "Два с половиной человека", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/4163db4a-8c89-4c35-b30b-7f7db7167c2b/1920x" },
-        { "id": "1120247", "name": "Наследие", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/5c4264d2-4f24-4e20-b7bd-9136fb027934/1920x" },
-        { "id": "195523", "name": "Мир Дикого Запада", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/0f04f3c8-616f-4d10-b385-6a734abc062f/1920x" },
         { "id": "4703386", "name": "Билли Кид", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9df58265-6b36-440c-9759-b8509bf9ed27/1920x" },
         { "id": "1316601", "name": "Дом Дракона", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/4939065f-efa2-4192-a3c2-cec534e79e01/300x450" },
         { "id": "464963", "name": "Игра престолов", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/0fd61bf2-49b1-4715-b884-a7eaa39a569d/1920x" },
@@ -123,7 +119,7 @@ let tok_show = {
 
     ]
 }
-    ;
+;
 
 
 setTimeout(() => {

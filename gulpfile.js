@@ -1,6 +1,30 @@
 let project_folder = "dist";
 let source_folder = "#src";
 
+// let path = {
+//     build: {
+//         html: project_folder + "/",
+//         css: project_folder + "/css/",
+//         js: project_folder + "/js/",
+//         img: project_folder + "/img/",
+//         fonts: project_folder + "/fonts/",
+//     },
+//     src: {
+//         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html",],
+//         css: source_folder + "/scss/style.scss",
+//         // css: source_folder + "/scss/*.scss",
+//         js: source_folder + "/js/script.js",
+//         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+//         fonts: source_folder + "/fonts/*.ttf",
+//     },
+//     watch: {
+//         html: source_folder + "/**/*.html",
+//         css: source_folder + "/scss/**/*.scss",
+//         js: source_folder + "/js/**/*.js",
+//         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+//     },
+//     clean: "./" + project_folder + "/"
+// }
 
 let path = {
     build: {
@@ -10,18 +34,13 @@ let path = {
         js: project_folder + "/js/",
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
-        // github
-        html: "./",
-        css: "css/",
-        js: "js/",
-        img: "img/",
     },
     src: {
         pwa: [source_folder + "/*"],
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html",],
-        css: source_folder + "/scss/style.scss",
+        css: source_folder + "/scss/*.scss",
         js: [source_folder + "/js/*.js", "!" + source_folder + "/js/_*.js"],
-        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp,jpeg}",
         fonts: source_folder + "/fonts/*.ttf",
     },
     watch: {
@@ -29,13 +48,9 @@ let path = {
         html: source_folder + "/**/*.html",
         css: source_folder + "/scss/**/*.scss",
         js: source_folder + "/js/**/*.js",
-        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp, jpeg}",
     },
-    clean: "./" + project_folder + "/",
-    clean: "img/",
-    clean: "css/",
-    clean: "js/",
-    clean: "*.html",
+    clean: "./" + project_folder + "/"
 }
 
 let { src, dest } = require('gulp'),
@@ -50,8 +65,8 @@ let { src, dest } = require('gulp'),
     rename = require("gulp-rename"),
     uglify = require("gulp-uglify-es").default,
     imagemin = require("gulp-imagemin"),
-    webp = require('gulp-webp'),
-    webphtml = require('gulp-webp-html'),
+    // webp = require('gulp-webp'),
+    // webphtml = require('gulp-webp-html'),
     webpcss = require("gulp-webpcss");
 
 //BROWSER SYNC============================================================
@@ -70,7 +85,7 @@ function browserSync(params) {
 function html() {
     return src(path.src.html)
         .pipe(fileinclude())
-        .pipe(webphtml())
+        // .pipe(webphtml())
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream())
 }
@@ -86,7 +101,7 @@ function css() {
             overrideBrowserslist: ["last 5 versions"],
             cascade: true
         }))
-        .pipe(webpcss())
+        // .pipe(webpcss())
         .pipe(dest(path.build.css))
         .pipe(clean_css())
         .pipe(rename({
@@ -112,9 +127,9 @@ function js() {
 //IMAGES=====================================================================
 function images() {
     return src(path.src.img)
-        .pipe(webp({
-            quality: 70
-        }))
+        // .pipe(webp({
+        //     quality: 70
+        // }))
         .pipe(dest(path.build.img))
         .pipe(src(path.src.img))
         .pipe(imagemin({
