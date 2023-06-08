@@ -122,22 +122,23 @@ let tok_show = {
 ;
 
 
-setTimeout(() => {
-    document.getElementById("splash_screen").style.display = "none";
-    document.body.style.backgroundColor = "#22272e";
-    document.getElementById("header").style.display = "block";
-}, 3000)
-
-
 document.addEventListener('keyup', (e) => {
-    if (e.code === "Enter") {
-        searchFilm()
+    let id_film = document.getElementById("id_film")
+    if (e.code === "Numpad1" || e.code === "Digit1") {
+
+        id_film.focus()
+        id_film.addEventListener('keyup', (e) => {
+            if (e.code === "Enter") {
+                searchFilm()
+            }
+        })
     }
     else { }
 })
 
 function searchFilm() {
     let doc = document;
+    document.getElementById("poster_list").innerHTML = "";
     let id = doc.getElementById("id_film").value;
     doc.getElementById("name_film").textContent = "";
     try {
@@ -150,6 +151,20 @@ function searchFilm() {
 }
 
 function playVideo(id, doc) {
+    let w_window = window.innerWidth;
+    if (w_window >= 1600) {
+        doc.getElementById("content").style.width = `1280px`;
+        doc.getElementById("content").style.height = `720px`;
+    }
+    else {
+        if (w_window <= 1300) {
+            doc.getElementById("content").style.width = `980px`;
+            doc.getElementById("content").style.height = `560px`;
+        }
+    }
+
+
+
     let filmDiv = doc.createElement("div");
     filmDiv.id = "yohoho";
     filmDiv.setAttribute("data-kinopoisk", id);
@@ -162,6 +177,8 @@ function playVideo(id, doc) {
 
 function getFilms() {
     let doc = document;
+    doc.getElementById("content").style.width = `0`;
+    doc.getElementById("content").style.height = `0`;
     doc.getElementById("content").innerHTML = "";
     doc.getElementById("name_film").textContent = "";
     doc.getElementById("poster_list").innerHTML = "";
@@ -170,6 +187,8 @@ function getFilms() {
 
 function getSerials() {
     let doc = document;
+    doc.getElementById("content").style.width = `0`;
+    doc.getElementById("content").style.height = `0`;
     doc.getElementById("content").innerHTML = "";
     doc.getElementById("name_film").textContent = "";
     document.getElementById("poster_list").innerHTML = "";
@@ -178,6 +197,8 @@ function getSerials() {
 
 function getMult() {
     let doc = document;
+    doc.getElementById("content").style.width = `0`;
+    doc.getElementById("content").style.height = `0`;
     doc.getElementById("content").innerHTML = "";
     doc.getElementById("name_film").textContent = "";
     document.getElementById("poster_list").innerHTML = "";
