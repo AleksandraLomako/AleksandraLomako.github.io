@@ -119,7 +119,7 @@ let tok_show = {
 
     ]
 }
-;
+    ;
 
 
 document.addEventListener('keyup', (e) => {
