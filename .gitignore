@@ -1,4 +1,4 @@
 node_modules/
 gulpfile.js
-_#dist/
-_#src
+_#src/
+js/script.min.min.js
