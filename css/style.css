@@ -78,7 +78,7 @@ header {
 
 .logo {
   color: #e50914;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
   background: none;
   padding: 0px;
@@ -158,13 +158,12 @@ header {
 }
 
 .main_wrapper {
-  display: grid;
   grid-template-rows: auto auto;
   width: 100%;
   margin-top: 80px;
 }
 
-#name_film {
+.name_film {
   display: none;
   color: #fff;
   font-size: 200%;
@@ -176,6 +175,7 @@ header {
   padding: 10px;
   border: 5px solid #d11818;
   border-radius: 5px;
+  text-align: center;
 }
 
 .poster_list {
@@ -188,7 +188,6 @@ header {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  gap: 30px 30px;
 }
 
 .posterImg {
@@ -199,6 +198,7 @@ header {
   border-radius: 5px;
   -webkit-animation: fade-in 1s linear;
   animation: fade-in 1s linear;
+  margin: 10px;
 }
 
 .posterImg:hover {

@@ -201,6 +201,7 @@ function getTok_show() {
 
 function updateContent(content) {
     let doc = document;
+    doc.getElementById("name_film").style.display = "none"
     let i = 0;
     let lengthList = content.serials.length
     while (i < lengthList) {
@@ -219,6 +220,7 @@ function updateContent(content) {
         doc.getElementById(i).appendChild(name_film);
         poster.onclick = function () {
             try {
+                doc.getElementById("name_film").style.display = "block"
                 doc.getElementById("name_film").textContent = name_film.textContent;
                 doc.getElementById("yohoho").remove();
                 playVideo(poster.id, doc);
