@@ -106,6 +106,7 @@ let mult = {
     ]
 }
     ;
+const doc = document;
 
 
 // document.addEventListener('keyup', (e) => {
@@ -129,14 +130,14 @@ function searchFilm() {
     doc.getElementById("name_film").textContent = "";
     try {
         doc.getElementById("yohoho").remove();
-        playVideo(id, doc)
+        playVideo(id)
     }
     catch {
-        playVideo(id, doc)
+        playVideo(id)
     }
 }
 
-function playVideo(id, doc) {
+function playVideo(id) {
     let w_window = window.innerWidth;
     if (w_window >= 1600) {
         doc.getElementById("content").style.width = `1280px`;
@@ -203,35 +204,32 @@ function updateContent(content) {
     let doc = document;
     doc.getElementById("name_film").style.display = "none"
     let i = 0;
-    let lengthList = content.serials.length
-    while (i < lengthList) {
-        let container_film = doc.createElement("div");
-        container_film.id = i;
-        container_film.className = "film_container";
-        let name_film = doc.createElement("p");
-        name_film.textContent = content.serials[i].name;
-        let poster = doc.createElement("input");
-        poster.type = "image"
-        poster.id = content.serials[i].id;
-        poster.className = "posterImg";
-        poster.src = content.serials[i].img;
-        doc.getElementById("poster_list").appendChild(container_film);
-        doc.getElementById(i).appendChild(poster)
-        doc.getElementById(i).appendChild(name_film);
-        poster.onclick = function () {
-            try {
-                doc.getElementById("name_film").style.display = "block"
-                doc.getElementById("name_film").textContent = name_film.textContent;
-                doc.getElementById("yohoho").remove();
-                playVideo(poster.id, doc);
-                doc.getElementById("poster_list").innerHTML = "";
-            }
-            catch {
-                doc.getElementById("name_film").textContent = name_film.textContent;
-                playVideo(poster.id, doc);
-                doc.getElementById("poster_list").innerHTML = "";
-            }
-        }
+    let posterListHtml = "";
+    while (i < content.serials.length) {
+        posterListHtml = posterListHtml + `
+        <div id="${content.serials[i].id}" class="film_container" 
+        film_name = "${content.serials[i].name}" 
+        style="background-image: url('${content.serials[i].img}');" 
+        onclick="test(${content.serials[i].id}, '${content.serials[i].name}')">
+        </div>`
         i++;
+
     }
+    doc.getElementById("poster_list").innerHTML = posterListHtml
+}
+
+function test(id, name) {
+    try {
+        doc.getElementById("name_film").style.display = "block"
+        doc.getElementById("name_film").textContent = name;
+        doc.getElementById("yohoho").remove();
+        playVideo(id);
+        doc.getElementById("poster_list").innerHTML = "";
+    }
+    catch {
+        doc.getElementById("name_film").textContent = name;
+        playVideo(id);
+        doc.getElementById("poster_list").innerHTML = "";
+    }
+
 }
