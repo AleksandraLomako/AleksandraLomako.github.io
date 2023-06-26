@@ -112,13 +112,14 @@ header {
   margin-left: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
 }
 
 .menu_item:hover {
   color: #e50914;
   background-color: #FFFFFF;
-  -webkit-animation: fade-in 0.5s linear;
-  animation: fade-in 0.5s linear;
 }
 
 .logo-search {
@@ -149,7 +150,7 @@ header {
   width: 50px;
   font-family: "Roboto", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
   background: #282b34;
   color: #FFFFFF;
   outline: none;
@@ -161,10 +162,14 @@ header {
   border-bottom-right-radius: 5px;
   padding: 0px;
   cursor: pointer;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
 }
 
 .search_btn:hover {
   color: #e50914;
+  background: #FFFFFF;
 }
 
 .main_wrapper {

@@ -108,26 +108,12 @@ let mult = {
     ;
 const doc = document;
 
-
-// document.addEventListener('keyup', (e) => {
-//     let id_film = document.getElementById("id_film")
-//     if (e.code === "Numpad1" || e.code === "Digit1") {
-
-//         id_film.focus()
-//         id_film.addEventListener('keyup', (e) => {
-//             if (e.code === "Enter") {
-//                 searchFilm()
-//             }
-//         })
-//     }
-//     else { }
-// })
-
 function searchFilm() {
-    let doc = document;
-    document.getElementById("poster_list").innerHTML = "";
-    let id = doc.getElementById("id_film").value;
-    doc.getElementById("name_film").textContent = "";
+    doc.querySelector(".poster_list").innerHTML = "";
+    let id = doc.querySelector(".num_input").value;
+    let name_film = doc.querySelector(".name_film");
+    name_film.textContent = "";
+    name_film.style.display = "none";
     try {
         doc.getElementById("yohoho").remove();
         playVideo(id)
@@ -139,18 +125,17 @@ function searchFilm() {
 
 function playVideo(id) {
     let w_window = window.innerWidth;
-    if (w_window >= 1600) {
+    if (w_window > 1600) {
         doc.getElementById("content").style.width = `1280px`;
         doc.getElementById("content").style.height = `720px`;
     }
-    else {
-        if (w_window <= 1300) {
-            doc.getElementById("content").style.width = `980px`;
-            doc.getElementById("content").style.height = `560px`;
-        }
+    else if (w_window < 1300 && w_window > 980) {
+        console.log(w_window);
+        doc.getElementById("content").style.width = `980px`;
     }
-
-
+    else if (w_window < 980) {
+        doc.getElementById("content").style.width = `320px`;
+    }
 
     let filmDiv = doc.createElement("div");
     filmDiv.id = "yohoho";
