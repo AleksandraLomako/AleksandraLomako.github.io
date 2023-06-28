@@ -25,7 +25,8 @@
 body {
   margin: 0px;
   font-family: "Arial", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background: #1c202c;
+  background: url("../../img/piramid.png");
+  background-size: cover;
 }
 
 .page {
@@ -55,7 +56,6 @@ header {
   width: 100%;
   position: fixed;
   z-index: 10;
-  background: #1c202c;
   -webkit-animation: fade-in 0.5s linear;
           animation: fade-in 0.5s linear;
 }
@@ -195,6 +195,8 @@ header {
 
 .poster_list {
   width: 100%;
+  height: 91vh;
+  overflow: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
