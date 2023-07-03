@@ -7,7 +7,6 @@
 <title>FSM Online</title>
 <link rel="stylesheet" href="css/style.min.css">
 <link rel="stylesheet" href="css/media.min.css">
-<script src="js/script.js"></script>
 </head>
 
 <body>
@@ -17,8 +16,8 @@
     <div class="header-menu-items">
         <div class="logo-search">
             <a href="index.html" class="logo">FSM</a>
-            <input type="text" id="id_film" class="num_input" placeholder="ID...">
-            <button class="search_btn" onclick="searchFilm()">Ок</button>
+            <input type="number" class="film_id" placeholder="ID...">
+            <button class="search_btn">Ок</button>
         </div>
         <a href="#" class="menu_item" onclick="getMult()">Мультфильмы</a>
         <a href="#" class="menu_item" onclick="getSerials()">Сериалы</a>
@@ -36,6 +35,7 @@
 </div>
         </main>
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

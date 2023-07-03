@@ -106,22 +106,29 @@ let mult = {
     ]
 }
     ;
+
 const doc = document;
+const filmID = doc.querySelector(".film_id")
+const searchBtn = doc.querySelector(".search_btn");
+const filmName = doc.querySelector(".name_film");
 
 function searchFilm() {
     doc.querySelector(".poster_list").innerHTML = "";
-    let id = doc.querySelector(".num_input").value;
-    let name_film = doc.querySelector(".name_film");
-    name_film.textContent = "";
-    name_film.style.display = "none";
+    filmName.textContent = "";
+    filmName.style.display = "none";
     try {
         doc.getElementById("yohoho").remove();
-        playVideo(id)
+        playVideo(filmID.value);
     }
     catch {
-        playVideo(id)
+        playVideo(filmID.value)
     }
+    filmID.value = "";
 }
+
+
+searchBtn.addEventListener("click", () => searchFilm());
+
 
 function playVideo(id) {
     let w_window = window.innerWidth;
@@ -177,13 +184,6 @@ function getMult() {
     updateContent(mult)
 }
 
-function getTok_show() {
-    let doc = document;
-    doc.getElementById("content").innerHTML = "";
-    doc.getElementById("name_film").textContent = "";
-    document.getElementById("poster_list").innerHTML = "";
-    updateContent(tok_show)
-}
 
 function updateContent(content) {
     let doc = document;
@@ -192,29 +192,13 @@ function updateContent(content) {
     let posterListHtml = "";
     while (i < content.serials.length) {
         posterListHtml = posterListHtml + `
-        <div id="${content.serials[i].id}" class="film_container" 
-        film_name = "${content.serials[i].name}" 
-        style="background-image: url('${content.serials[i].img}');" 
+        <div id="${content.serials[i].id}" class="film_container"
+        film_name = "${content.serials[i].name}"
+        style="background-image: url('${content.serials[i].img}');"
         onclick="test(${content.serials[i].id}, '${content.serials[i].name}')">
         </div>`
         i++;
 
     }
     doc.getElementById("poster_list").innerHTML = posterListHtml
-}
-
-function test(id, name) {
-    try {
-        doc.getElementById("name_film").style.display = "block"
-        doc.getElementById("name_film").textContent = name;
-        doc.getElementById("yohoho").remove();
-        playVideo(id);
-        doc.getElementById("poster_list").innerHTML = "";
-    }
-    catch {
-        doc.getElementById("name_film").textContent = name;
-        playVideo(id);
-        doc.getElementById("poster_list").innerHTML = "";
-    }
-
 }
