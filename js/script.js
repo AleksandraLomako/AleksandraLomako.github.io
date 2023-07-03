@@ -164,15 +164,15 @@ function getFilms() {
     updateContent(films)
 }
 
-function getSerials() {
-    let doc = document;
-    doc.getElementById("content").style.width = `0`;
-    doc.getElementById("content").style.height = `0`;
-    doc.getElementById("content").innerHTML = "";
-    doc.getElementById("name_film").textContent = "";
-    document.getElementById("poster_list").innerHTML = "";
-    updateContent(serials)
-}
+// function getSerials() {
+//     let doc = document;
+//     doc.getElementById("content").style.width = `0`;
+//     doc.getElementById("content").style.height = `0`;
+//     doc.getElementById("content").innerHTML = "";
+//     doc.getElementById("name_film").textContent = "";
+//     document.getElementById("poster_list").innerHTML = "";
+//     updateContent(serials)
+// }
 
 function getMult() {
     let doc = document;
