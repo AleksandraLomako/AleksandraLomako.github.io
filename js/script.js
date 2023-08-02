@@ -1,5 +1,5 @@
-let films = {
-    "serials": [
+let content = {
+    "films": [
         { "id": "4374", "name": "Пираты Карибского моря: Проклятие Черной жемчужины", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/d7e3dbd6-e4a9-4485-b751-d02f49825166/1920x" },
         { "id": "63991", "name": "Пираты Карибского моря: Сундук мертвеца", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/e6f10f1b-10d3-43b7-832c-8a7fd9f3e56b/1920x" },
         { "id": "102124", "name": "Пираты Карибского моря: На краю света", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/cb1f749e-958e-4504-ae51-ddb3d98b9a9f/1920x" },
@@ -22,10 +22,7 @@ let films = {
         { "id": "4542208", "name": "Вышка (2022)", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/19b383f0-400b-4314-8c93-a08f85f696cf/1920x" },
         { "id": "1228069", "name": "Темные воды", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/671c38ee-5e9c-475a-b797-8bfb29381bc1/1920x" },
         { "id": "976636", "name": "Большая игра", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/00e2e084-093b-446a-a5f7-b0ab926d9612/1920x" },
-    ]
-}
-
-let serials = {
+    ],
     "serials": [
         { "id": "4703386", "name": "Билли Кид", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9df58265-6b36-440c-9759-b8509bf9ed27/1920x" },
         { "id": "1316601", "name": "Дом Дракона", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/4939065f-efa2-4192-a3c2-cec534e79e01/300x450" },
@@ -39,13 +36,8 @@ let serials = {
         { "id": "5079093", "name": "Монастырь", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/af72bd82-d992-482b-a291-a181e78bce6f/1920x" },
         { "id": "1100777", "name": "Триггер", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/4ec437f6-b383-40c9-8b68-15e2a668bd79/1920x" },
         { "id": "87908", "name": "Шантарам", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/6e36ea10-e57b-4ea5-bd86-956bc77f3a55/1920x" },
-
-
-    ]
-}
-
-let mult = {
-    "serials": [
+    ],
+    "mults": [
         { "id": "958607", "name": "Леди Баг и Супер-кот", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/1e6d0bf0-fe6e-488c-b12e-d18cd9c4826a/1920x" },
         { "id": "1115176", "name": "Кощей. Похититель невест", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/9ab093e2-01cd-47be-896f-e7e5c378693b/1920x" },
         { "id": "959274", "name": "Олаф и холодное приключение", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/3cab2b21-0419-4088-9080-d08b3651986e/1920x" },
@@ -104,16 +96,55 @@ let mult = {
         { "id": "34299", "name": "Спасатели", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/e2d37853-ec60-418f-b845-20c53aee76a0/1920x" },
         { "id": "648762", "name": "Планета динозавров", "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/f0c9c818-4007-4c8a-a0a1-9d4523d5fd62/600x900" },
     ]
-}
-    ;
-
+};
 const doc = document;
 const filmID = doc.querySelector(".film_id")
 const searchBtn = doc.querySelector(".search_btn");
+const filmBtn = doc.querySelector(".films_btn");
+const multBtn = doc.querySelector(".mult_btn")
+const serialBtn = doc.querySelector(".serials_btn")
 const filmName = doc.querySelector(".name_film");
+const posterList = doc.getElementById("poster_list");
+const div_content = doc.getElementById("content");;
+class VideoCard {
+    constructor(id, name, img) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.createCard = function () {
+            const card = document.createElement("div");
+            card.id = id;
+            card.className = "film_container";
+            card.setAttribute("film_name", name);
+            card.style.backgroundImage = `url('${img}')`
+            card.addEventListener("click", () => {
+                console.log(id);
+                playVideo(id)
+            })
+            return card;
+        }
+    }
+};
+function clearContent() {
+    posterList.innerHTML = "";
+    div_content.innerHTML = "";
+}
+
+function showContent(content, category) {
+    clearContent();
+    let i = 0;
+    while (i < content[category].length) {
+        const id = content[category][i]["id"];
+        const name = content[category][i]["name"];
+        const img = content[category][i]["img"];
+        const card = new VideoCard(id, name, img);
+        posterList.appendChild(card.createCard());
+        i++
+    }
+}
 
 function searchFilm() {
-    doc.querySelector(".poster_list").innerHTML = "";
+    clearContent();
     filmName.textContent = "";
     filmName.style.display = "none";
     try {
@@ -126,79 +157,27 @@ function searchFilm() {
     filmID.value = "";
 }
 
-
-searchBtn.addEventListener("click", () => searchFilm());
-
-
 function playVideo(id) {
-    let w_window = window.innerWidth;
-    if (w_window > 1600) {
-        doc.getElementById("content").style.width = `1280px`;
-        doc.getElementById("content").style.height = `720px`;
-    }
-    else if (w_window < 1300 && w_window > 980) {
-        console.log(w_window);
-        doc.getElementById("content").style.width = `980px`;
-    }
-    else if (w_window < 980) {
-        doc.getElementById("content").style.width = `320px`;
-    }
-
-    let filmDiv = doc.createElement("div");
-    filmDiv.id = "yohoho";
-    filmDiv.setAttribute("data-kinopoisk", id);
-    doc.getElementById("content").append(filmDiv);
+    clearContent()
+    console.log(id);
+    let player_div = doc.createElement("div");
+    player_div.id = "yohoho";
+    player_div.setAttribute("data-kinopoisk", id);
+    doc.getElementById("content").append(player_div);
     const sp = doc.createElement('script');
     sp.src = "//yohoho.cc/yo.js";
     doc.getElementById("content").append(sp);
-    window.scrollTo(0, 0);
-}
-
-function getFilms() {
-    let doc = document;
-    doc.getElementById("content").style.width = `0`;
-    doc.getElementById("content").style.height = `0`;
-    doc.getElementById("content").innerHTML = "";
-    doc.getElementById("name_film").textContent = "";
-    doc.getElementById("poster_list").innerHTML = "";
-    updateContent(films)
-}
-
-// function getSerials() {
-//     let doc = document;
-//     doc.getElementById("content").style.width = `0`;
-//     doc.getElementById("content").style.height = `0`;
-//     doc.getElementById("content").innerHTML = "";
-//     doc.getElementById("name_film").textContent = "";
-//     document.getElementById("poster_list").innerHTML = "";
-//     updateContent(serials)
-// }
-
-function getMult() {
-    let doc = document;
-    doc.getElementById("content").style.width = `0`;
-    doc.getElementById("content").style.height = `0`;
-    doc.getElementById("content").innerHTML = "";
-    doc.getElementById("name_film").textContent = "";
-    document.getElementById("poster_list").innerHTML = "";
-    updateContent(mult)
-}
-
-
-function updateContent(content) {
-    let doc = document;
-    doc.getElementById("name_film").style.display = "none"
-    let i = 0;
-    let posterListHtml = "";
-    while (i < content.serials.length) {
-        posterListHtml = posterListHtml + `
-        <div id="${content.serials[i].id}" class="film_container"
-        film_name = "${content.serials[i].name}"
-        style="background-image: url('${content.serials[i].img}');"
-        onclick="test(${content.serials[i].id}, '${content.serials[i].name}')">
-        </div>`
-        i++;
-
+    let width = document.body.clientWidth;
+    if (width > 1000) {
+        doc.getElementById("yohoho").style.width = "980px"
+        doc.getElementById("yohoho").style.height = "550px"
     }
-    doc.getElementById("poster_list").innerHTML = posterListHtml
+
 }
+
+searchBtn.addEventListener("click", () => searchFilm());
+filmBtn.addEventListener("click", () => showContent(content, "films"));
+multBtn.addEventListener("click", () => showContent(content, "mults"));
+serialBtn.addEventListener("click", () => showContent(content, "serials"));;
+
+
