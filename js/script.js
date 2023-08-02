@@ -169,13 +169,19 @@ function playVideo(id) {
     doc.getElementById("content").append(sp);
     let width = document.body.clientWidth;
     if (width > 1000) {
-        doc.getElementById("yohoho").style.width = "980px"
-        doc.getElementById("yohoho").style.height = "550px"
+        doc.getElementById("yohoho").style.width = "980px";
+        doc.getElementById("yohoho").style.height = "550px";
     }
 
 }
 
 searchBtn.addEventListener("click", () => searchFilm());
+filmID.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        searchFilm();
+    }
+
+});
 filmBtn.addEventListener("click", () => showContent(content, "films"));
 multBtn.addEventListener("click", () => showContent(content, "mults"));
 serialBtn.addEventListener("click", () => showContent(content, "serials"));;
