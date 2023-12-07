@@ -1,3 +1,3 @@
-alert("LABORATORY PAGE")
-console.log('LABORATORY PAGE');
+alert("LABORATORY PAGE 1")
+console.log('LABORATORY PAGE 1');
 
