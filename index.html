@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/player_style.css">
-    <title>Live Сameras</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="./webOSTVjs-1.2.4/webOSTV.js"></script>
+    <script>function createDeviceData() { let e = { project: { name: "CrocOTT", version: "1.4.6" }, os: { name: "webos", ram_free: 0 }, cpu_brand: "Lg" }; !0 === webOS.platform.tv ? webOS.deviceInfo((function (o) { console.log(o), e.os.version = o.version, e.os.arch = o.modelName, e.os.ram_total = Math.round(Number(o.ddrSize.replace("G", ""))), localStorage.setItem("deviceData_Crocott", JSON.stringify(e)) })) : (console.log("This device is not TV."), e.os.version = "02.08.09", e.os.arch = "LG TESTING", e.os.ram_total = Math.round(Number("2.5G".replace("G", ""))), localStorage.setItem("deviceData_Crocott", JSON.stringify(e))) } createDeviceData()</script>
+    <title>CrocOtt</title>
+    <script defer="defer" src="static/js/main.658c57c8.js"></script>
+    <link href="static/css/main.4222c672.css" rel="stylesheet">
 </head>
 
-<body>
-    <main class="container">
-
-
-    </main>
-
-    <script src="js/script.js"></script>
+<body class="body"><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="root" id="root"></div>
 </body>
-<template>
-
-</template>
 
 </html>
